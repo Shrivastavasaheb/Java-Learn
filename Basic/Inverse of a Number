@@ -1,1 +1,38 @@
+import java.util.*;
+public class Inverse {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner (System.in);
+		
+		//Taking Input of the Number from the user.
+		System.out.println("Enter the number you want inverse of:");
+		int n = scn.nextInt();
+		
+		/*
+		  1) Here inv stands for inverse number which sill be printed
+		  at the end for final inversion
+		  2) op stands for original place
+		  3) od stands for original digit
+		  4) ip stands for inverted place
+		  5) id stands for inverted digit
+		  */
+		int inv=0;
+		int op= 1;
+		
+		while(n!=0) {
+			int od = n%10;
+			int id = op;
+			int ip = od;
+			
+			//make change in inverse to get the answer
+			inv = inv + id*(int)Math.pow(10, ip - 1);
+			n= n/ 10;
+			op++;
+			
+		}
+		System.out.println(inv);
+		
+	}
+
+}
 
