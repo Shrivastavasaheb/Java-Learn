@@ -1,44 +1,41 @@
 import java.util.*;
-public class SumOfArrays {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner scn =  new Scanner (System.in);
-		//creating new array1
-		int n1 = scn.nextInt();
-		int[] a1= new int[n1];
-		//Input of array
-		for(int i=0; i<a1.length; i++) {
-			a1[i]=scn.nextInt();
+public class sumofarray2 {
+	public static void main ( String[] args) {
+		Scanner scn= new Scanner (System.in);
+		System.out.println("Enter the array 1 size:");
+		int n1= scn.nextInt();
+		System.out.println("Enter the numbers of array 1:");
+		int[] a1 = new int[n1];
+		for(int i = 0; i < a1.length; i++) {
+			a1[i]= scn.nextInt();
 		}
-		//creating new array2
-		int n2 = scn.nextInt();
+		System.out.println("Enter the array 2 size:");
+		int n2= scn.nextInt();
+		System.out.println("Enter the numbers of array 2");
 		int[] a2= new int[n2];
-		//Input of array 2
-		for(int i = 0; i<a2.length; i++) {
+		for(int i=0; i < a2.length; i++) {
 			a2[i]= scn.nextInt();
 		}
-		//Creating new array for the sum
-		int[] sum = new int [n2>n1 ? n2 : n1];
-		
-		//initializing c as 0
+		int[] sum = new int[n2>n1? n2 :n1];
 		int c = 0;
-		//setting pointers at the end
+		
 		int i = a1.length - 1;
-		int j = a2.length -1;
+		int j = a2.length - 1;
 		int k = sum.length -1;
 		
-		while(k>=0) {
+		while (k>=0) {
 			int d = c;
-			if(i>=0) {
+			if (i>=0) {
 				d= d + a1[i];
 			}
-			if(j>=0) {
-				d += a2[j];
+			if (j>=0) {
+				d+= a2[j];
 			}
+			
 			c=d/10;
 			d=d%10;
-			sum[k]= d;
+			sum[k]=d;
+			
 			i--;
 			j--;
 			k--;
@@ -48,12 +45,8 @@ public class SumOfArrays {
 			System.out.println(c);
 			
 		}
-		
-		for(int val : sum) {
-			
-			System.out.println(val);	
+		for(int val:sum) {
+			System.out.println(val);
 		}
-	
 	}
-
 }
